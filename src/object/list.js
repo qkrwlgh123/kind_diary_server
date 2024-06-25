@@ -17,13 +17,13 @@ export const handleObjectList = async (req, res) => {
 
     const findResult = await prisma.object.findMany({
       where: {
-        createdAt: {
+        date: {
           gte: startDate,
           lt: endDate,
         },
       },
       include: {
-        toDos: true, // toDos 관계를 포함시킵니다.
+        toDos: true,
       },
     });
 

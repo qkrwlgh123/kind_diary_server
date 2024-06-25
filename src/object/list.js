@@ -8,18 +8,10 @@ export const handleObjectList = async (req, res) => {
     const bodyInfo = req.body.data;
     const yearMonth = bodyInfo.yearMonth;
 
-    // yearMonth를 분해하여 연도와 월 구분
-    const [year, month] = yearMonth.split("-").map(Number);
-
-    // 해당 월의 첫 번째 날과 마지막 날을 계산
-    const startDate = new Date(year, month - 1, 1);
-    const endDate = new Date(year, month, 0, 23, 59, 59, 999);
-
     const findResult = await prisma.object.findMany({
       where: {
         date: {
-          gte: startDate,
-          lt: endDate,
+          startsWith: yearMonth,
         },
       },
       include: {

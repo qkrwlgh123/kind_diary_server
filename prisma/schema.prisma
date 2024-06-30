@@ -28,5 +28,6 @@ model Todo {
   name    String
   object_id Int     @db.Integer
   object    Object  @relation(fields: [object_id], references: [id])
+  isCompleted Boolean @default(false)
   createdAt DateTime @default(now())
 }

@@ -15,7 +15,11 @@ export const handleObjectList = async (req, res) => {
         },
       },
       include: {
-        toDos: true,
+        toDos: {
+          orderBy: {
+            id: "asc", // ID 순서대로 오름차순 정렬
+          },
+        },
       },
     });
 

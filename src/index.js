@@ -19,6 +19,6 @@ app.use("/api/object", objectRouter);
 app.use("/api/todo", todoRouter);
 /** 라우터 집합 */
 
-const port = 3000;
+const port = 8080;
 const handleListen = () => console.log(`start server`);
 app.listen(port, handleListen);

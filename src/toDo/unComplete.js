@@ -2,8 +2,8 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-/** 할일 완료 처리 API */
-export const handleCompleteTodo = async (req, res) => {
+/** 할일 미완료 처리 API */
+export const handleUncompleteTodo = async (req, res) => {
   try {
     const bodyInfo = req.body.data;
 
@@ -14,7 +14,7 @@ export const handleCompleteTodo = async (req, res) => {
         id: todoId,
       },
       data: {
-        isCompleted: true,
+        isCompleted: false,
       },
     });
 

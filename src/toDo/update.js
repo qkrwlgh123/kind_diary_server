@@ -2,19 +2,20 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-/** 할일 완료 처리 API */
-export const handleCompleteTodo = async (req, res) => {
+/** 할일 이름 수정 API */
+export const handleUpdateTodo = async (req, res) => {
   try {
     const bodyInfo = req.body.data;
 
     const todoId = bodyInfo.todoId;
+    const updateName = bodyInfo.name;
 
     const updatedTodo = await prisma.todo.update({
       where: {
         id: todoId,
       },
       data: {
-        isCompleted: true,
+        name: updateName,
       },
     });
 

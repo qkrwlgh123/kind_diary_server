@@ -14,6 +14,9 @@ export const handleObjectList = async (req, res) => {
           startsWith: yearMonth,
         },
       },
+      orderBy: {
+        id: "asc",
+      },
       include: {
         toDos: {
           orderBy: {

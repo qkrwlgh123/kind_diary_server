@@ -7,7 +7,6 @@ const prisma = new PrismaClient();
 
 /** 유저 로그인 API */
 export const handleLoginUser = async (req, res) => {
-  console.log(req.headers);
   try {
     const bodyInfo = req.body.data;
 
@@ -19,6 +18,10 @@ export const handleLoginUser = async (req, res) => {
         name,
       },
     });
+
+    if (!findedUser) {
+      return res.status(404).json({ code: 404, data: "User is not exist" });
+    }
 
     const decrpytResult = bcrypt.compareSync(password, findedUser.password);
 
@@ -36,7 +39,7 @@ export const handleLoginUser = async (req, res) => {
       process.env.JWT_KEY
     );
 
-    res.status(201).json({ code: 201, data: generatedToken });
+    res.status(200).json({ code: 200, data: generatedToken });
   } catch (err) {
     res.status(500).json({ message: err.message });
   }

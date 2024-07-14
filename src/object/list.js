@@ -4,6 +4,8 @@ const prisma = new PrismaClient();
 
 /** 월별 목표 리스트 조회 API */
 export const handleObjectList = async (req, res) => {
+  const userId = req.headers.id;
+
   try {
     const bodyInfo = req.body.data;
     const yearMonth = bodyInfo.yearMonth;
@@ -13,6 +15,7 @@ export const handleObjectList = async (req, res) => {
         date: {
           startsWith: yearMonth,
         },
+        user_id: userId,
       },
       orderBy: {
         id: "asc",

@@ -4,6 +4,8 @@ const prisma = new PrismaClient();
 
 /** 신규 목표 생성 API */
 export const handleAddObject = async (req, res) => {
+  const userId = req.headers.id;
+
   try {
     const bodyInfo = req.body.data;
 
@@ -14,6 +16,9 @@ export const handleAddObject = async (req, res) => {
       data: {
         object: objectName,
         date,
+        user: {
+          connect: { id: userId },
+        },
       },
     });
 

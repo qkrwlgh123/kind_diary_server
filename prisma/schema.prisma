@@ -13,10 +13,21 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model User { 
+  @@map(name: "user") 
+  id Int @id @default(autoincrement())
+  name String @db.VarChar(255)
+  password String @db.VarChar(255) @default("")
+  objects Object[]
+  createdAt DateTime @default(now())
+}
+
 model Object { 
   @@map(name: "object") 
   id Int @id @default(autoincrement()) 
   object String @db.VarChar(255)
+  user_id Int 
+  user User @relation(fields: [user_id], references: [id])
   toDos Todo[]
   date String @db.VarChar(255)
   createdAt DateTime @default(now())
@@ -26,7 +37,7 @@ model Todo {
   @@map(name: "todo")
   id      Int       @id @default(autoincrement())
   name    String
-  object_id Int     @db.Integer
+  object_id Int     
   object    Object  @relation(fields: [object_id], references: [id])
   isCompleted Boolean @default(false)
   createdAt DateTime @default(now())

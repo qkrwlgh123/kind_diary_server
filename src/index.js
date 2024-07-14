@@ -27,7 +27,7 @@ app.use("/api/todo", todoRouter);
 app.use("/api/achievement", achievementResultRouter);
 /** 라우터 집합 */
 
-const port = 8080;
+const port = 3000;
 const handleListen = () => console.log(`start server`);
 
 app.listen(port, handleListen);

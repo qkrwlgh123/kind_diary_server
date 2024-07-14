@@ -2,7 +2,7 @@ import jwt from "jsonwebtoken";
 
 const handleDecodedToken = (req, res, next) => {
   const path = req.path;
-  if (path === "/api/user/login") return next();
+  if (path === "/api/user/login" || path === "/api/user/create") return next();
 
   try {
     const headers = req.headers.authorization;

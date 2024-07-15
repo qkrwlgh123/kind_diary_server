@@ -12,7 +12,10 @@ export const handleCreateUser = async (req, res) => {
     const name = bodyInfo.name;
     const password = bodyInfo.password;
 
-    const encryptedPw = bcrypt.hashSync(password, process.env.SALT_KEY);
+    const encryptedPw = bcrypt.hashSync(
+      password,
+      parseInt(process.env.SALT_KEY)
+    );
 
     await prisma.user.create({
       data: {

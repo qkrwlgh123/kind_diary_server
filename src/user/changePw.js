@@ -29,7 +29,7 @@ export const handleChangePassword = async (req, res) => {
 
     await prisma.user.update({
       where: {
-        name,
+        id: findedUser.id,
       },
       data: {
         password: encryptedPw,

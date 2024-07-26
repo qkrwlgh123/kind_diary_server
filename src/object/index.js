@@ -6,6 +6,6 @@ const objectRouter = express.Router();
 
 objectRouter.post("/add", handleAddObject);
 
-objectRouter.post("/list", handleObjectList);
+objectRouter.get("/list", handleObjectList);
 
 export default objectRouter;

@@ -4,8 +4,8 @@ import { handleEachObjectsResult } from "./eachObjectsResult.js";
 
 const achievementResultRouter = express.Router();
 
-achievementResultRouter.post("/general", handleGeneralResult);
+achievementResultRouter.get("/general", handleGeneralResult);
 
-achievementResultRouter.post("/each", handleEachObjectsResult);
+achievementResultRouter.get("/each", handleEachObjectsResult);
 
 export default achievementResultRouter;

@@ -4,9 +4,11 @@ const prisma = new PrismaClient();
 
 /** 주별(월 ~ 금) 종합 달성률 API */
 export const handleGeneralResult = async (req, res) => {
+  const userId = req.headers.id;
+
   try {
-    const bodyInfo = req.body.data;
-    const todayDate = bodyInfo.todayDate;
+    const queryInfo = req.query;
+    const todayDate = queryInfo.todayDate;
 
     const convertedToDateTodayDate = new Date(todayDate);
     const monday = new Date(convertedToDateTodayDate);
@@ -23,6 +25,7 @@ export const handleGeneralResult = async (req, res) => {
           gte: formatDate(monday),
           lte: formatDate(friday),
         },
+        user_id: userId,
       },
       orderBy: {
         id: "asc",

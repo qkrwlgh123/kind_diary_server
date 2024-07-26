@@ -7,8 +7,8 @@ export const handleObjectList = async (req, res) => {
   const userId = req.headers.id;
 
   try {
-    const bodyInfo = req.body.data;
-    const yearMonth = bodyInfo.yearMonth;
+    const paramsInfo = req.params;
+    const yearMonth = paramsInfo.yearMonth;
 
     const findResult = await prisma.object.findMany({
       where: {

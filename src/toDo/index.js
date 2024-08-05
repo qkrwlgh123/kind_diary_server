@@ -9,11 +9,11 @@ const todoRouter = express.Router();
 
 todoRouter.post("/add", handleAddTodo);
 
-todoRouter.put("/complete", handleCompleteTodo);
+todoRouter.patch("/complete", handleCompleteTodo);
 
-todoRouter.put("/unComplete", handleUncompleteTodo);
+todoRouter.patch("/unComplete", handleUncompleteTodo);
 
-todoRouter.put("/update", handleUpdateTodo);
+todoRouter.patch("/update", handleUpdateTodo);
 
 todoRouter.delete("/delete", handleDeleteTodo);
 

@@ -5,6 +5,7 @@
 [![license](https://img.shields.io/badge/License-GPL-red)](https://en.wikipedia.org/wiki/GNU_General_Public_License)
 [![code](https://img.shields.io/badge/Code-Javascript-blue)](https://developer.mozilla.org/ko/docs/Web/JavaScript)
 [![Framework](https://img.shields.io/badge/Framework-Node.js-orange)](https://nodejs.org/en)
+[![DBMS](https://img.shields.io/badge/DBMS-PostgreSQL-green)](https://www.postgresql.org/)
 [![member](https://img.shields.io/badge/Project-Personal-brightgreen)](https://github.com/qkrwlgh123)
 
 <br/>

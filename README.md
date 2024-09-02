@@ -14,7 +14,7 @@
 
 <br/>
 
-<img src="https://github.com/user-attachments/assets/4e0e861d-6c40-47ed-9079-a2519595c6a6" alt="Image Description" width="900"/>
+<img src="https://github.com/user-attachments/assets/61c6b8f4-1b73-4d4d-b444-24ae3f0e0afd" alt="스크린샷" width="1000"/>
 
 <br/>
 
